@@ -150,11 +150,13 @@ npm install
 ```
 cd server
 ```
+```
 php artisan serve
 ```
 フロントエンド
 ```
 cd breeze-next
+```
 ```
 npm run dev
 ``` 
