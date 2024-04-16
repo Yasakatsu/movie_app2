@@ -10,6 +10,9 @@
 ```
 composer create-project --prefer-dist laravel/laravel "プロジェクト名"
 ```
+```
+cd  "プロジェクト名"
+```
 
 ### 2.Laravel Breezeをインストールする
 ```
@@ -124,18 +127,34 @@ php artisan breezejp
 
 [Laravel Breeze 日本語化パッケージ：Breezejp](https://github.com/askdkc/breezejp)
 ## フロントエンド
-1. Next.js フォルダーをcloneする
+### 1. Next.js フォルダーをcloneする
 ```
 git clone https://github.com/laravel/breeze-next.git
+```
+```
+cd breeze-next
 ```
 参照先
 
 [Next.jsスターターキット](https://github.com/laravel/breeze-next)
 
+### 2. npmをインストールする
+```
+npm install
+```
+### 3. .envファイルを編集する
+`.env.example`ファイルをコピーして、`.env.local`ファイルを作成する。
 
-1. サーバーを立ち上げる
+### 4. サーバーを立ち上げる
+バックエンド
+```
+cd server
+```
+php artisan serve
+```
+フロントエンド
+```
+cd breeze-next
 ```
 npm run dev
 ``` 
-2. .envファイルを編集する
-`.env.example`ファイルをコピーして、`.env.local`ファイルを作成する。
