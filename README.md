@@ -21,17 +21,11 @@ composer require laravel/breeze --dev
 Laravelフレームワークのための軽量な認証スターターキットで、ログイン、登録、パスワードリセット、メール確認、二要素認証などの基本的な認証機能が追加。
 
 --devオプションを使用すると、パッケージは開発環境でのみ利用可能になり、本番環境では利用できなくなります。開発中にのみ必要なパッケージに対してよく使用される。
-
-
 ### 3.Laravel専用のコマンドである、artisanコマンドを使用しインストールを実行する
-```
-php artisan breeze:install
-```
-Laravel Breezeパッケージをインストールした後に実行するもので、LaravelプロジェクトにBreezeの認証ビューとルーティングを設定。先ほどの`composer require laravel/breeze --dev`コマンドとの違いは、`composer require`コマンドがパッケージをプロジェクトにダウンロードしてインストールするのに対し、そのインストールしたパッケージをプロジェクトで使用するための設定を行う、という点
 ```
 php artisan breeze:install api
 ```
-Laravel BreezeのAPIサポートをインストールするためのもの。これを行わないと、Next.jsと行き来出来ない。
+Laravel Breezeパッケージをインストールした後に実行するもので、LaravelプロジェクトにBreezeの認証ビューとルーティングを設定。また、Laravel BreezeのAPIサポートをインストールするためのもの。これを行わないと、Next.jsと行き来出来ない。先ほどの`composer require laravel/breeze --dev`コマンドとの違いは、`composer require`コマンドがパッケージをプロジェクトにダウンロードしてインストールするのに対し、こちらはインストールしたパッケージをプロジェクトで使用するための設定を行う。
 ### 4.DB・言語等の設定を行う
 `.env`ファイル内の項目を下記内容に変更する。
 因みに、DBはMySQLを使用する形を想定し設定中
@@ -60,10 +54,10 @@ LOG_LEVEL=debug
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=movie_app2
+DB_PORT="MAMPもしくはXAMPnoポート番号"
+DB_DATABASE="任意のDB名称入力"
 DB_USERNAME=root
-DB_PASSWORD=root
+DB_PASSWORD="DBのPASS記載。デフォルトはroot"
 
 SESSION_DRIVER=database
 SESSION_LIFETIME=120
@@ -126,10 +120,21 @@ php artisan breezejp
 [Laravelスターターキットについて](https://laravel.com/docs/11.x/starter-kits#breeze-and-next)
 
 [Laravel Breeze 日本語化パッケージ：Breezejp](https://github.com/askdkc/breezejp)
+### 7.サーバーを立ち上げる(バックエンド)
+```
+php artisan serve
+```
+### 8. 動作確認
+Webブラウザを立ち上げ、下記URLを入力し、laravelのverが表示されればOK
+```
+localhost:8000
+```
+
 ## フロントエンド
 ### 1. Next.js フォルダーをcloneする
 ```
-git clone https://github.com/laravel/breeze-next.git
+git clone git clone https://github.com/laravel/breeze-next
+.git "任意のプロジェクト名。おすすめは<client>"
 ```
 ```
 cd breeze-next
@@ -145,18 +150,13 @@ npm install
 ### 3. .envファイルを編集する
 `.env.example`ファイルをコピーして、`.env.local`ファイルを作成する。
 
-## サーバーを立ち上げる
-バックエンド
-```
-cd server
-```
-```
-php artisan serve
-```
-フロントエンド
-```
-cd breeze-next
-```
+### 4.サーバーを立ち上げる
 ```
 npm run dev
 ``` 
+### 5.動作確認を行う
+
+Webブラウザを立ち上げ、下記URLを入力し、画面が表示されればOK
+```
+localhost:3000
+```
