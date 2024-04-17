@@ -137,24 +137,29 @@ git clone git clone https://github.com/laravel/breeze-next
 .git "任意のプロジェクト名。おすすめは<client>"
 ```
 ```
-cd breeze-next
+cd "任意のプロジェクト名"
 ```
 参照先
 
 [Next.jsスターターキット](https://github.com/laravel/breeze-next)
 
-### 2. npmをインストールする
+### 2. pageルーターverのNext.jsをダウンロード
+```
+ git checkout -b '任意のbranch名' 81ce4caab419aaa3dc5f389a8cfd8afb33143bfa
+```
+
+### 3. npmをインストールする
 ```
 npm install
 ```
-### 3. .envファイルを編集する
+### 4. .envファイルを編集する
 `.env.example`ファイルをコピーして、`.env.local`ファイルを作成する。
 
-### 4.サーバーを立ち上げる
+### 5.サーバーを立ち上げる
 ```
 npm run dev
 ``` 
-### 5.動作確認を行う
+### 6.動作確認を行う
 
 Webブラウザを立ち上げ、下記URLを入力し、画面が表示されればOK
 ```
